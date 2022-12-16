@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "79861600769",
+    "project_id": "easymotor-4c74b",
+    "storage_bucket": "easymotor-4c74b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79861600769:android:ffe8837ffb4f347bcba600",
+        "android_client_info": {
+          "package_name": "com.easymotor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79861600769-2i41m1vteuaa56qq4745lnkvmpd84099.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjAr9LjQPXcoV0TEKF-kUHEXOOTYi9M8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79861600769-2i41m1vteuaa56qq4745lnkvmpd84099.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
