@@ -1,61 +1,17 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import AppText from './app/components/AppText';
+import { View, Text, Button } from 'react-native'
+import React from 'react'
+import {NavigationContainer,createNavigationContainerRef} from '@react-navigation/native';
+import NavigationTheme from './app/navigations/NavigationTheme';
+import {AuthNavigator} from './app/navigations';
 
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed Screen</Text>
-    </View>
-  );
-}
-
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <AppText>test</AppText>
-    </View>
-  );
-}
-
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <AppText>Profile Screen</AppText>
-    </View>
-  );
-}
-
-const Drawer = createDrawerNavigator();
-
-function MyDrawer() {
-  return (
-    <Drawer.Navigator useLegacyImplementation initialRouteName="Feed">
-      <Drawer.Screen
-        name="Feed"
-        component={Feed}
-        options={{ drawerLabel: 'Home' }}
-      />
-      <Drawer.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{ drawerLabel: 'Updates' }}
-      />
-      <Drawer.Screen
-        name="Profile"
-        component={Profile}
-        options={{ drawerLabel: 'Profile' }}
-      />
-    </Drawer.Navigator>
-  );
-}
+const navigationRef = createNavigationContainerRef()
 
 export default function App() {
+
   return (
-    <NavigationContainer>
-      <MyDrawer />
-    </NavigationContainer>
-  );
+
+     <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
+        <AuthNavigator />
+      </NavigationContainer>
+  )
 }
