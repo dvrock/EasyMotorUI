@@ -24,7 +24,6 @@ const AuthNavigator = () => (
     screenOptions={{
       headerShown: false,
     }}>
-    <Stack.Screen name="Login" component={Login} />
     <Stack.Screen name="Drawer" component={Drawer} />
 
   </Stack.Navigator>

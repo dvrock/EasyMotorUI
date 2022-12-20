@@ -1,10 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Text,Button } from 'react-native'
 import React from 'react'
-
+import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux'
 export default function Home() {
+    const navigation = useNavigation();
+    const allreducer =useSelector(state=>state)
+    console.log(allreducer);
   return (
-    <View style={{alignItems:'center',justifyContent:'center'}}>
-      <Text style={{color:'red'}}>Home</Text>
-    </View>
+    <View>
+    <Button title='Open Drawer' onPress={() => navigation.toggleDrawer()}></Button>
+
+  </View>
   )
 }

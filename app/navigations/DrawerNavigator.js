@@ -7,17 +7,13 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import {AppNavigator} from '../navigations';
+import {HomeNavigator} from '../navigations';
 
 import colors from '../config/colors';
 
 import CustomText from '../components/AppText';
-
-import LinearGradient from 'react-native-linear-gradient';
 import {Title, Drawer} from 'react-native-paper';
 import Login from '../screens/Auth/Login';
-import Home from '../screens/Home';
-import AddInsurer from '../screens/AddInsurer';
 
 function CustomDrawerContent(props) {
   return (
@@ -57,7 +53,6 @@ function CustomDrawerContent(props) {
           <View style={styles.drawerSection}>
             
             <DrawerItem
-            
               icon={({color, size}) => (
                 <Image
                   source={require('../assets/home.png')}
@@ -98,7 +93,7 @@ function CustomDrawerContent(props) {
               <CustomText style={{fontWeight:'600'}}>Add Field Officer</CustomText>
             )}
             onPress={() => {
-              props.navigation.navigate('Home');
+              props.navigation.navigate('AddFieldOffier');
             }}
           />
           <DrawerItem
@@ -195,12 +190,12 @@ const DrawerNav = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <DrawerNav.Navigator useLegacyImlementation={false}
-    
+    screenOptions={{
+      headerShown: false,
+    }}
+      initialRouteName="App"
       drawerContent={props => <CustomDrawerContent {...props} />}>
-                        <DrawerNav.Screen name="Home" component={Home} />
-
-              <DrawerNav.Screen name="AddInsurer" component={AddInsurer} />
-
+        <DrawerNav.Screen name="App" component={HomeNavigator} />
     </DrawerNav.Navigator>
   );
 };
